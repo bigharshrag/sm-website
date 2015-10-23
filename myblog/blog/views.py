@@ -2,13 +2,16 @@ from django.shortcuts import render,get_object_or_404
 from .models import Post
 from .forms import PostForm
 from django.shortcuts import redirect
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
+
 def post_list(request):
 	posts=Post.objects.order_by('-created_date')
 	return render(request, 'blog/post_list.html', {'posts':posts})
 
+@login_required
 def post_new(request):
 	if request.method == "POST":
 		form = PostForm(request.POST)
