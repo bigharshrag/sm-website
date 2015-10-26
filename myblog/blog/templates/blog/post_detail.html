@@ -1,29 +1,39 @@
 {% extends "blog/base.html" %}
 
 {% block content %}
-    <div class="post">
+    <div class="container">
+    	<div class="row">
+    		<div class="col-lg-8">
         <h1>{{ post.title }}</h1>
-         <div class="date">
+         <hr>
+         <div class="date"><span class="glyphicon glyphicon-time"></span>
                 {{ post.created_date }}
             </div>
+             <hr>
         <p>{{ post.text|linebreaks }}</p>
     </div>
-
+		</div>
+    
     <hr>
-	<a href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
+	<a class="btn btn-primary" role="button" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment <span class="glyphicon glyphicon-plus"></span></a>
+	<hr>
 	{% for comment in post.comments.all %}
 		{% if user.is_authenticated or comment.approved_comment %}
-			<div class="comment">
-			<strong>{{ comment.author }}</strong>
+
+			<div class="media">
+				<div class="media-body">
+			<h4 class="media-heading">{{ comment.author }}  <small>{{ comment.created_date }}</small>
 			{% if not comment.approved_comment %}
-				<a href="{% url 'comment_approve' pk=comment.pk %}">Approve Comment</a>
-				<a href="{% url 'comment_remove' pk=comment.pk %}">Remove Comment</a>
+				<a class="btn btn-success btn-xs" role="button" href="{% url 'comment_approve' pk=comment.pk %}"><span class="glyphicon glyphicon-ok"></span> Approve Comment</a>
+				<a class="btn btn-danger btn-xs" role="button" href="{% url 'comment_remove' pk=comment.pk %}"><span class="glyphicon glyphicon-remove"></span> Remove Comment</a></h4>
 			{% endif %}
-			<div class="date">{{ comment.created_date }}</div>
-			<p>{{ comment.text|linebreaks }}</p>
+			
+			<p><font size="2.5">{{ comment.text|linebreaks }} </font></p>
+			</div>
 			</div>
 		{% endif %}
 		{% empty %}
-			<p>No comments here yet :(</p>
+			<p>No comments yet :(</p>
 	{% endfor %}
+	</div>
 {% endblock %}
