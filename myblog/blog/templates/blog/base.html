@@ -6,13 +6,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link type="text/css" rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
         <link type="text/css" rel="stylesheet" href="{% static 'css/bootstrap-theme.css' %}">
-        <title>MyBlog</title>
+        <link href='https://fonts.googleapis.com/css?family=Aladin' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
+        <title>ThoughtShot</title>
     </head>
     <body>
         <nav class="navbar navbar-inverse navbar-fixed-top ">
          <div>
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="/">MyBlog</a>
+                    <a class="navbar-brand" href="/">ThoughtShot</a>
                 </div>    
             {% if user.is_authenticated %}
                 <p class="navbar-text navbar-right"><font color="white" size="3">Hello {{ user.username }}(<a href="{% url 'django.contrib.auth.views.logout' %}">Log Out</a>)</font></p>
@@ -27,6 +30,7 @@
     </nav>
         {% block content %}
         {% endblock %}
+    
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
          <script src="{% static 'js/bootstrap.js' %}"></script>
     </body>

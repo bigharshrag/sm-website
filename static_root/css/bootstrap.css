@@ -272,6 +272,9 @@ th {
   src: url('../fonts/glyphicons-halflings-regular.eot');
   src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
+
+
+
 .glyphicon {
   position: relative;
   top: 1px;
@@ -1179,7 +1182,9 @@ hr {
   cursor: pointer;
 }
 h1,
-h2,
+h2{
+font-family: 'Permanent Marker', cursive;
+}
 h3,
 h4,
 h5,
@@ -1415,9 +1420,11 @@ a.bg-danger:focus {
   background-color: #e4b9b9;
 }
 .page-header {
-  padding-bottom: 9px;
-  margin: 40px 0 20px;
-  border-bottom: 1px solid #eee;
+  padding-bottom: 7px;
+  margin: 10px 0 10px;
+  font-size: 60px;
+font-family: 'Oswald', sans-serif;
+  /*border-bottom: 1px solid #eee;*/
 }
 ul,
 ol {
@@ -4329,8 +4336,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-brand {
   float: left;
   height: 50px;
-  padding: 15px 15px;
-  font-size: 18px;
+  padding: 15px 40px;
+  font-size: 35px;
   line-height: 20px;
 }
 .navbar-brand:hover,
@@ -4648,7 +4655,8 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   border-color: #080808;
 }
 .navbar-inverse .navbar-brand {
-  color: #9d9d9d;
+  font-family: 'Aladin', cursive;
+  color: #006dcc;
 }
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus {
