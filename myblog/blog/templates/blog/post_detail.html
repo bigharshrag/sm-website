@@ -24,8 +24,8 @@
 				<div class="media-body">
 			<h4 class="media-heading">{{ comment.author }}  <small>{{ comment.created_date }}</small>
 			{% if not comment.approved_comment %}
-				<a class="btn btn-success btn-xs" role="button" href="{% url 'comment_approve' pk=comment.pk %}"><span class="glyphicon glyphicon-ok"></span> Approve Comment</a>
-				<a class="btn btn-danger btn-xs" role="button" href="{% url 'comment_remove' pk=comment.pk %}"><span class="glyphicon glyphicon-remove"></span> Remove Comment</a></h4>
+				<a class="btn btn-success btn-xs" role="button" href="{% url 'comment_approve' pk=comment.pk %}"><span class="glyphicon glyphicon-ok"></span> Approve </a>
+				<a class="btn btn-danger btn-xs" role="button" href="{% url 'comment_remove' pk=comment.pk %}"><span class="glyphicon glyphicon-remove"></span> Remove </a></h4>
 			{% endif %}
 			
 			<p><font size="2.5">{{ comment.text|linebreaks }} </font></p>
